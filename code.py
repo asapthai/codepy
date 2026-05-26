@@ -6,23 +6,15 @@ COMMANDS = [
     r'Expand-Archive -Path "C:/hello/hello.zip" -DestinationPath "C:/hello/unzipped"',
 ]
 
-def run_powershell(command: str) -> int:
-    kwargs = {"capture_output": True, "text": True}
-    
-    # CREATE_NO_WINDOW chỉ dùng trên Windows
-    import platform
-    if platform.system() == "Windows":
-        kwargs["creationflags"] = subprocess.CREATE_NO_WINDOW
-
+def run_powershell(command: str):
     result = subprocess.run(
         ["powershell", "-NoProfile", "-NonInteractive", "-WindowStyle", "Hidden", "-Command", command],
-        **kwargs
-    ) 
+        capture_output=True,
+        text=True,
+        creationflags=subprocess.CREATE_NO_WINDOW  # hide CMD
+    )
     return result.returncode
 
-
 if __name__ == "__main__":
-    for cmd in COMMANDS:
-        if run_powershell(cmd) != 0:
-            print("Dừng lại do lỗi.")
-            break
+    combined = "; ".join(COMMANDS)
+    run_powershell(combined)
